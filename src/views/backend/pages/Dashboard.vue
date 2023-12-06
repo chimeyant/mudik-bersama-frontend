@@ -13,7 +13,7 @@
       </div>
     </v-row>
 
-    <v-row class="justify-center mb-10 pl-5 pr-5">
+    <!-- <v-row class="justify-center mb-10 pl-5 pr-5">
       <div class="title-geoinfo">PETA KESELAMATAN & PERLENGKAPAN JALAN</div>
       <v-col cols="12">
         <l-map
@@ -50,10 +50,10 @@
         </l-map>
 
       </v-col>
-    </v-row>
+    </v-row> -->
 
     <v-row class="pa-2">
-      <v-col :cols="device.mobile ? `12` : `3`">
+      <v-col :cols="device.mobile ? `12` : `4`">
         <v-card
           class="dashboard-statistik"
           dark
@@ -61,7 +61,7 @@
         >
           <div class="d-flex flex-no-wrap justify-space-between mb-3">
             <div>
-              <v-card-title class="text-h5">Jumlah Pelaporan</v-card-title>
+              <v-card-title class="text-h5">Jumlah Bus</v-card-title>
 
               <v-card-subtitle>{{ data.jmlpengaduan }} Kejadian</v-card-subtitle>
 
@@ -76,7 +76,7 @@
           <span class="dashboard-statistik-footer-text ml-3 mt-4">Data Tahun {{ 2023 }}</span>
         </v-card>
       </v-col>
-      <v-col :cols="device.mobile ? `12` : `3`">
+      <v-col :cols="device.mobile ? `12` : `4`">
         <v-card
           class="dashboard-statistik"
           dark
@@ -84,7 +84,7 @@
         >
           <div class="d-flex flex-no-wrap justify-space-between mb-3">
             <div>
-              <v-card-title class="text-h5">Jumlah Pos Pantau</v-card-title>
+              <v-card-title class="text-h5">Jumlah Pendaftar</v-card-title>
 
               <v-card-subtitle>{{ data.jmlpos }} Unit</v-card-subtitle>
 
@@ -99,7 +99,7 @@
           <span class="dashboard-statistik-footer-text ml-3 mt-4">Data Tahun {{ 2023 }}</span>
         </v-card>
       </v-col>
-      <v-col :cols="device.mobile ? `12` : `3`">
+      <v-col :cols="device.mobile ? `12` : `4`">
         <v-card
           class="dashboard-statistik"
           dark
@@ -107,33 +107,9 @@
         >
           <div class="d-flex flex-no-wrap justify-space-between mb-3">
             <div>
-              <v-card-title class="text-h5">Jumlah Perlintasan</v-card-title>
+              <v-card-title class="text-h5">Jumlah Peserta</v-card-title>
 
               <v-card-subtitle>{{ data.jmlperlintasan }} Lokasi</v-card-subtitle>
-
-              <v-card-actions>
-
-              </v-card-actions>
-            </div>
-
-          </div>
-          <v-divider></v-divider>
-
-          <span class="dashboard-statistik-footer-text ml-3 mt-4">Data Tahun {{ 2023 }}</span>
-        </v-card>
-      </v-col>
-
-      <v-col :cols="device.mobile ? `12` : `3`">
-        <v-card
-          class="dashboard-statistik"
-          dark
-          height="150"
-        >
-          <div class="d-flex flex-no-wrap justify-space-between mb-3">
-            <div>
-              <v-card-title class="text-h5">Jumlah Sekolah</v-card-title>
-
-              <v-card-subtitle>{{ data.jmlsekolah }} Sekolah</v-card-subtitle>
 
               <v-card-actions>
 

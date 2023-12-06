@@ -544,6 +544,54 @@ export default new Vuex.Store({
         });
       }
     },
+    signInByGoogle: async function({ commit, state }, payload) {
+      // try {
+      console.log(payload);
+      if (!payload) {
+        commit("SNACKBAR_MUTATION", {
+          color: "warning",
+          text: "Url Not Valid",
+          state: true,
+        });
+
+        return false;
+      }
+
+      const users = {};
+
+      commit("USER_MUTATION", {
+        user: users,
+      });
+
+      const menus = [];
+      commit("MENUS_MUTATION", { menus });
+
+      let {
+        data: { code, success, token, errors },
+      } = await state.http.post(payload);
+
+      if (!success) {
+        return false;
+      }
+      commit("HTTP_MUTATION", {
+        token: token,
+      });
+
+      let { data: user } = await state.http.get("/api/user-info");
+
+      commit("USER_MUTATION", {
+        user: user,
+      });
+
+      return true;
+      // } catch (error) {
+      //   commit("SNACKBAR_MUTATION", {
+      //     color: "error",
+      //     text: "User dan password tidak sesuai ",
+      //     state: true,
+      //   });
+      // }
+    },
     signOut: function({ commit, state }) {
       const menus = [];
       commit("MENUS_MUTATION", { menus });

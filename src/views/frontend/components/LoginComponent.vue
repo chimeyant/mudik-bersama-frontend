@@ -1,12 +1,12 @@
 <template>
   <v-container>
-    <v-row>
+    <v-row class="">
       <v-col
         cols="6"
         v-show="device.desktop"
       >
-        <v-row class="justify-content-center animated animate__fadeInLeft">
-          <v-img src="/images/login.jpg">
+        <v-row class="justify-content-center animated animate__fadeInLeft mt-16">
+          <v-img src="/images/signup-min.png">
           </v-img>
         </v-row>
       </v-col>
@@ -14,76 +14,32 @@
         :cols="device.desktop ?`6`:`12`"
         class="animated animate__fadeInRight"
       >
-
-        <div class="login-title">
-          Login SI NIKMAT LANTAS <span class="red--text">Plus</span>
+        <div class="login-title mt-16">
+          LOGIN MUDIK BARENG <span class="red--text">2024</span>
         </div>
         <div class="login-subtitle">
-          Silahkan masukan pengguna dan kata sandi anda...!
+          Pastikan anda memiliki akun
         </div>
-        <div :class="device.desktop ? `mt-10 pl-15 pr-15`: `mt-5`">
+        <div>
           <v-col cols="12">
-            <v-text-field
-              lable="Pengguna"
-              outlined
-              placeholder="Masukan Pengguna"
-              dense
-              hide-details
-              v-model="uname"
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12">
-            <v-text-field
-              lable="Kata Sandi"
-              outlined
-              placeholder="Kata Sandi"
-              dense
-              hide-details
-              v-model="upass"
-              type="password"
-              v-on:keyup.enter="postAuthent"
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12">
-            <v-row class="pr-4 pt-5">
-              <v-spacer></v-spacer>
-              <v-btn
-                outlined
-                dense
-                :color="theme.color"
-                @click="postAuthent"
-              >Masuk</v-btn>
+            <v-row class="mt-5 justify-center">
+              <v-col :cols="device.desktop ? 6:12">
+                <v-btn
+                  block
+                  outlined
+                  color="white"
+                  class="text-transform-none elevation-1 shadow-1 ant-font-viga purple--text"
+                  @click="postLogin"
+                >
+                  Masuk Dengan Akun <span class="blue--text ml-1">G</span><span class="red--text">o</span><span class="yellow--text">o</span><span class="blue--text">g</span><span class="green--text">l</span><span class="red--text">e</span></v-btn>
+              </v-col>
             </v-row>
-            <v-row class="forget-password">
-              Lupa Kata sandi..?
-            </v-row>
-          </v-col>
-          <v-col
-            cols="12"
-            v-if="false"
-          >
-            <v-row class="mt-5 mb-2">
-              <v-divider></v-divider>
-              <div style="margin-top:-12px ;margin-left:5px;margin-right: 5px ; font-size:12pt ; color:grey ; border-color: grey solid; border-width: 2px; ">Atau</div>
-              <v-divider></v-divider>
-            </v-row>
-          </v-col>
-          <v-col
-            cols="12"
-            v-if="false"
-          >
-            <v-row class="justify-center">
-              <div class="other-sign-in-red">
-                <v-icon color="red">mdi-google</v-icon>
-              </div>
-              <div class="other-sign-in-blue">
-                <v-icon color="blue">mdi-facebook</v-icon>
-              </div>
-            </v-row>
+
           </v-col>
         </div>
       </v-col>
     </v-row>
+
   </v-container>
 </template>
 
@@ -106,37 +62,12 @@ export default {
   },
   methods: {
     ...mapActions(["setPage", "signIn"]),
-    postAuthent: function () {
-      this.signIn({
-        username: this.uname.replace(/ /g, ""),
-        userpass: this.upass,
-      }).then((pass) => {
-        if (!pass) {
-          console.clear();
-          return;
-        }
-        try {
-          if (this.auth.user.user.authent == "superadmin") {
-            this.$router.push({ name: "dashboard" });
-          }
-          if (this.auth.user.user.authent == "administrator") {
-            this.$router.push({ name: "dashboard" });
-          }
-          if (this.auth.user.user.authent == "opd") {
-            this.$router.push({ name: "dashboard" });
-          }
-          if (this.auth.user.user.authent == "user") {
-            this.$router.push({ name: "dashboard" });
-          }
-          if (this.auth.user.user.authent == "perusahaan") {
-            this.$router.push({ name: "perusahaan-dashboard" });
-          }
-        } catch (error) {
-          this.snackbar.color = "red";
-          this.snackbar.text = error;
-          this.snackbar.state = true;
-        }
-      });
+    postLogin: async function () {
+      try {
+        await this.http.get("api/auth/login").then((res) => {
+          window.open(res.data, "_SELF");
+        });
+      } catch (error) {}
     },
   },
 };

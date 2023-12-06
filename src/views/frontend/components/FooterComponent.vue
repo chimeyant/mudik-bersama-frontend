@@ -25,6 +25,14 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-row class="footer-bottom blue darken-3">
+      <v-col
+        cols="12"
+        class="copyright ant-font-viga"
+      >
+        {{ info.app_company }} || Copyright &copy; 2023 || Design By Ants
+      </v-col>
+    </v-row>
   </div>
 
 </template>
@@ -48,15 +56,19 @@ export default {
   padding-top: 15px;
 }
 .footer-title {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   color: white;
-  font-family: people;
+  font-family: viga;
+}
+.footer-bottom {
+  margin-top: 0px;
+  text-align: center;
+  height: 40px;
 }
 .copyright {
   font-size: 8pt;
   color: white;
-  padding: 10px;
 }
 .address {
   font-size: 10pt;
@@ -67,6 +79,7 @@ export default {
 .kontak {
   margin-bottom: 5px;
   color: white;
+  font-family: viga;
 }
 .kontak-item {
   font-size: 14px;
@@ -76,6 +89,7 @@ export default {
 .sosial-media {
   margin-bottom: 5px;
   color: white;
+  font-family: viga;
 }
 .sosial-media-item {
   font-size: 14px;

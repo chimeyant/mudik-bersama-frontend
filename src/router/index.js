@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import BaseFrontend from "../views/frontend/Base.vue";
 import Auth from "../providers/AuthProviders";
 import Login from "../views/frontend/Login.vue";
+import GoogleCallback from "../views/frontend/components/GoogleCallback.vue";
 import RegistrasiPerusahaan from "../views/frontend/RegistrasiPerusahaan.vue";
 import RegisterUser from "../views/frontend/RegisterUser.vue";
 import RegistrasiBerhasil from "../views/frontend/RegistrasiBerhasil.vue";
@@ -105,6 +106,11 @@ const routes = [
         component: RegistrasiBerhasil,
       },
       { path: "login", name: "login", component: Login },
+      {
+        path: "google/callback",
+        name: "google-callbak",
+        component: GoogleCallback,
+      },
 
       ,
     ],

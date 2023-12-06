@@ -1,15 +1,20 @@
 <template>
   <div
     class="hero-content"
-    style="background-image: url('images/bg-dishub.jpg');height: 100vH;;"
+    style="background-image: url('images/bg-mudik-mobile.jpeg'); height: 100vH;width:100%;"
   >
     <v-container>
       <v-row>
         <v-col :cols="device.desktop ? 4: 12">
-          <div :class="device.desktop ? `mt-4 mb-2 title animate__animated animate__lightSpeedInRight`:`mt-5 ml-5 display-1 blue--text animate__animated animate__lightSpeedInRight`">
-            Mudik Bareng Tahun 2024 <span class="red--text">Plus</span>
+          <div :class="device.desktop ? `mt-4 mb-2  animate__animated animate__lightSpeedInRight`:`mt-5 ml-5 display-1 blue--text animate__animated animate__lightSpeedInRight`">
+            <span
+              style="font-size: 20pt;"
+              class="font-weight-bold white--text"
+            >
+              Mudik Bareng Tahun 2024
+            </span>
           </div>
-          <div :class="device.desktop ? `body-2 animate__animated animate__fadeInUp animate__delay-1s`:`banner-subtitle animate__animated animate__fadeInUp animate__delay-1s ml-5` ">
+          <div :class="device.desktop ? `body-2 animate__animated animate__fadeInUp animate__delay-1s white--text`:`banner-subtitle animate__animated animate__fadeInUp animate__delay-1s ml-5 white--text` ">
             Bersama Dinas Perhubungan, Mudik Aman dan Lancar: Perjalanan yang Terencana, Keamanan Terjaga!
           </div>
           <div :class="device.desktop ? `mt-10 animate__animated animate__fadeInUp animate__delay-2s`:`mt-10 animate__animated animate__fadeInUp animate__delay-2s mr-5 ml-5` ">

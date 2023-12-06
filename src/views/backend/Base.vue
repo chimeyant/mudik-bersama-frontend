@@ -10,14 +10,14 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
-            SiNikmat Lantas Plus
+            Mudik Bareng 2024
           </v-list-item-title>
-          <v-list-item-subtitle>Ver. {{ info.app_ver }} </v-list-item-subtitle>
+          <v-list-item-subtitle> {{ info.app_ver }} </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
       <v-list-item class="px-2">
         <v-list-item-avatar class="white elevation-10 animate__animated animate__tada animate__delay-1s">
-          <v-img :src="user.avatar_path"></v-img>
+          <v-img :src="user.avatar"></v-img>
         </v-list-item-avatar>
         <!--<v-list-item-title>{{ user.username }} </v-list-item-title>-->
         <v-list-item-content>
@@ -159,10 +159,10 @@
             class="mr-2"
           >
             <v-avatar
-              size="26"
+              size="40"
               class="border-2  border-gray-light  elevation-10"
             >
-              <v-img :src="user.avatar_path"></v-img>
+              <v-img :src="user.avatar"></v-img>
             </v-avatar>
           </v-btn>
         </template>
@@ -171,7 +171,7 @@
           <v-list :color="theme.color + ` lighten-2` ">
             <v-list-item>
               <v-list-item-avatar class="white elevation-10">
-                <v-img :src="user.avatar_path
+                <v-img :src="user.avatar
             "></v-img>
               </v-list-item-avatar>
               <v-list-item-content>
@@ -616,6 +616,7 @@ export default {
 @import "../../assets/css/wow.css"
 </style>
 
+ 
 <style>
 .main-content {
   height: 80vh;
@@ -628,7 +629,7 @@ export default {
   font-stretch: condensed;
 }
 .people-title {
-  font-family: people;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
 }
 .toolbar-sub-title {

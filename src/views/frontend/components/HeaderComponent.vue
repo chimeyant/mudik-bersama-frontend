@@ -8,7 +8,7 @@
     elevation="0"
   >
     <v-toolbar-title>
-      <div class="pl-5 pr-5 pb-2">
+      <div :class="device.desktop ?`pl-5 pr-5 pb-2`:`pt-5 mr-2`">
         <img
           src="/images/logo-dishub.png"
           width="48px"
@@ -89,8 +89,12 @@ export default {
 
   data: () => ({
     menus: [
-      { title: "Registrasi", route: "/registrasi-perusahaan" },
-      { title: "Login", route: "/login" },
+      { title: "Beranda", route: "/" },
+      { title: "Jadwal", route: "/beranda" },
+      { title: "Alur Pendaftaran", route: "/beranda" },
+      { title: "Data Peserta", route: "/beranda" },
+
+      { title: "Login/Regsitrasi", route: "/login" },
     ],
   }),
   mounted() {},

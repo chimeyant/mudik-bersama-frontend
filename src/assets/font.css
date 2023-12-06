@@ -2,4 +2,9 @@
     font-family:people ;
     src: url('/fonts/People.ttf') 
 }
+@font-face {
+    font-family:viga ;
+    src: url('/fonts/Viga-Regular.ttf') 
+}
+
 
