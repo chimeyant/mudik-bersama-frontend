@@ -15,7 +15,7 @@
         class="animated animate__fadeInRight"
       >
         <div class="login-title mt-16">
-          LOGIN MUDIK BARENG <span class="red--text">2024</span>
+          LOGIN MUDIK GRATIS <span class="red--text">2024</span>
         </div>
         <div class="login-subtitle">
           Pastikan anda memiliki akun

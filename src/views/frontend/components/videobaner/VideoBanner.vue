@@ -11,7 +11,7 @@
               style="font-size: 20pt;"
               class="font-weight-bold white--text"
             >
-              Mudik Bareng Tahun 2024
+              Mudik Gratis Tahun 2024
             </span>
           </div>
           <div :class="device.desktop ? `body-2 animate__animated animate__fadeInUp animate__delay-1s white--text`:`banner-subtitle animate__animated animate__fadeInUp animate__delay-1s ml-5 white--text` ">
